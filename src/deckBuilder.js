@@ -28,6 +28,13 @@ class DeckBuilder{
     dealCards=(cards,count)=>{
         return cards.slice(0,count);
     }
+    deleteCardsFromDeck=(deck,cards)=>{
+        for (let i = deck.length - 1; i >= 0; i--) {
+            if (cards.includes(deck[i])) {
+            deck.splice(i, 1);
+            }
+        }
+    }
 }
 const deckBuilder = new DeckBuilder();
 console.log(`Deck`);
@@ -40,3 +47,6 @@ deckBuilder.displayCards(deck);
 console.log('hand of 2 cards');
 let hand = deckBuilder.dealCards(deck,2);
 deckBuilder.displayCards(hand);
+deckBuilder.deleteCardsFromDeck(deck,hand);
+console.log(`eliminated hand from deck`);
+deckBuilder.displayCards(deck);
