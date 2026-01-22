@@ -36,7 +36,8 @@ class DeckBuilder{
         }
     }
 }
-const deckBuilder = new DeckBuilder();
+module.exports = DeckBuilder;
+/*const deckBuilder = new DeckBuilder();
 console.log(`Deck`);
 let deck = deckBuilder.getDeck();
 deckBuilder.displayCards(deck);
@@ -49,4 +50,4 @@ let hand = deckBuilder.dealCards(deck,2);
 deckBuilder.displayCards(hand);
 deckBuilder.deleteCardsFromDeck(deck,hand);
 console.log(`eliminated hand from deck`);
-deckBuilder.displayCards(deck);
+deckBuilder.displayCards(deck);*/
