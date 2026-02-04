@@ -2,12 +2,11 @@ const prompt = require('prompt-sync')({ sigint: true });
 const Game = require("./game");
 
 class App {
-    constructor() {
-        this.game = new Game;
+    constructor(playerName) {
+        this.playerName = playerName;
+        this.game = new Game();
     }
     start() {
-        console.log("♠️ Welcome to Blackjack ♠️");
-
         this.game.startGame();
         this.showHands();
 
@@ -16,8 +15,10 @@ class App {
             this.showHands();
         }
 
-        console.log("\nGame Over!");
-        console.log(this.game.getGameState().result);
+        const result = this.game.getGameState().result;
+        console.log(`\nPlayer ${this.game.getGameState().result}!`);
+
+        return result; // "win" | "loss" | "tie"
     }
 
     showHands() {
@@ -49,18 +50,12 @@ class App {
                 continue;
             }
             break;
-            }
-            if (answer === "h") {
-                this.game.playerHit();
-            } else {
-                this.game.playerStand();
-            }
         }
-        endGame() {
-        console.log("\nGame Over!");
-        console.log(this.game.getGameState().result);
+        if (answer === "h") {
+            this.game.playerHit();
+        } else {
+            this.game.playerStand();
         }
     }
+}
 module.exports = App;
-const app = new App();
-app.start();

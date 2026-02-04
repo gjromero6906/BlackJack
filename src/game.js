@@ -23,8 +23,9 @@ class Game{
         this.playerHand.push(card[0]);
 
         if (this.calculateHandValue(this.playerHand) > 21) {
-        this.gameOver = true;
-        this.result = "Player busts! Dealer wins.";
+            this.gameOver = true;
+            this.result = "loss";   // <-- standardized for stats
+            console.log("Player busts! Dealer wins."); // optional for display
         }
     }
 
@@ -72,11 +73,14 @@ class Game{
         const dealerScore = this.calculateHandValue(this.dealerHand);
 
         if (dealerScore > 21 || playerScore > dealerScore) {
-        this.result = "Player wins!";
+            this.result = "win";  // player wins
+            console.log("Player wins!");
         } else if (playerScore < dealerScore) {
-        this.result = "Dealer wins!";
+            this.result = "loss"; // dealer wins
+            console.log("Dealer wins!");
         } else {
-        this.result = "Push (tie).";
+            this.result = "tie";  // push
+            console.log("Push (tie).");
         }
     }
 

@@ -1,0 +1,21 @@
+{
+  "lupe": {
+    "name": "lupe",
+    "wins": 3,
+    "losses": 2,
+    "ties": 1,
+    "gamesPlayed": 4
+  },
+  "null": {
+    "name": null,
+    "wins": 0,
+    "losses": 0,
+    "ties": 0,
+    "gamesPlayed": 4
+  },
+  "j\\": {
+    "wins": 1,
+    "losses": 0,
+    "ties": 0
+  }
+}
